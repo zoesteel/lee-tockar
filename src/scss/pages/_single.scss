@@ -1,0 +1,11 @@
+.post-navigation {
+  max-width: $site__width;
+  width: $content__width;
+  margin: 0 auto $pt-xl;
+  
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+  }
+}

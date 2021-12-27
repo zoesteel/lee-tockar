@@ -1,0 +1,11 @@
+.wp-block-button__link {
+  @include button__style;
+
+  .is-style-white & {
+    @include button__style-white;
+  }
+
+  .is-style-black & {
+    @include button__style-black;
+  }
+}

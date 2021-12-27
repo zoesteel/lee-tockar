@@ -1,0 +1,39 @@
+.header-cover {
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  // filter: grayscale(100%);
+  background-size: cover;
+  
+  .page:not( .single-project ) & {
+    // box-shadow: inset 0 -100px 80px $bg-color;
+  }
+
+  // .single-project & {
+  background-attachment: fixed;
+  // }
+}
+
+.entry-header {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: unset;
+}
+
+.entry-title {
+  background-color: $black;
+  opacity: .7;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 36px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: $pt-xxs $pt-l;
+
+  @media (min-width: 768px) {
+    font-size: 64px;
+  }
+}

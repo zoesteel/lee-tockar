@@ -1,0 +1,41 @@
+.front-page__slider {
+	.slide-content {
+		p {
+			font-weight: 700;
+			letter-spacing: 2px;
+			font-size: 36px;
+			font-family: $heading-font;
+			color: $white-darker;
+
+			@media (min-width: 768px) {
+				font-size: $pt-xl;
+			}
+		}
+	}
+}
+
+.front-page__post-grid {
+	.uagb-post {
+		&__inner-wrap {
+			background: transparent;
+		}
+
+		&__image {
+			img {
+				height: 225px;
+				transition: opacity 0.3s;
+				overflow: hidden;
+				object-fit: cover;
+				&:hover {
+					opacity: .3;
+				}
+			}
+		}
+
+		&__title {
+			margin-top: $pt-l;
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
+}

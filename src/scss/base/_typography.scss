@@ -1,0 +1,23 @@
+body {
+	font-family: $body-font;
+	letter-spacing: 1px;
+
+	p {
+		line-height: $body-line-height;
+	}
+}
+
+@for $i from 1 through 6 {
+	h#{$i} {
+		font-family: $heading-font;
+		font-weight: 700;
+	}
+}
+
+h3 {
+	font-size: $pt-m;
+}
+
+h6 {
+	font-size: 14px;
+}

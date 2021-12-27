@@ -1,0 +1,143 @@
+.menu-toggled {
+  overflow: hidden;
+}
+
+.site-header {
+  background: $bg-color;
+
+  nav {
+    #primary-menu {
+      display: none;
+    }
+
+    li::marker{
+      content: '';
+    }
+
+    a {
+      color: $white-darker;
+      text-decoration: none;
+      list-style-type: none;
+    }
+
+    .menu-toggle {
+      background: url(../../assets/images/menu.svg) no-repeat center;
+      filter: drop-shadow(2px 4px 6px $bg-darker);
+      border: none;
+      z-index: 99;
+      transition: background .4s ease-in-out;
+      padding: 0;
+      font-weight: 600;
+
+      &:after {
+        content: 'MENU';
+        margin-left: 80px;
+        font-size: $pt-m;
+      }
+    }
+  }
+}
+
+// All menus.
+.menu {
+  ul {
+    padding-left: 0;
+    li {
+      list-style-type: none;
+      margin-bottom: $pt-xxs;
+    }
+  }
+}
+
+// Main menu toggled open.
+.site-header {
+
+  .menu-toggled & {
+    height: unset;
+    align-items: flex-start;
+
+    .site-branding {
+      // position: absolute;
+      // top: 8px;
+    }
+
+    .menu-toggle {
+      // right: 1rem; 
+      /* width: unset; */
+      // position: absolute;
+      margin-top: 0.75rem;
+    }
+
+    nav {
+      // width: $content__width;
+      // display: flex;
+      // justify-content: center;
+      // flex-direction: column;
+      // overflow: hidden;
+      height: 100vh;
+
+      .menu-header-menu-container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: 0;
+      }
+
+      #primary-menu {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        // margin-top: -60px;
+
+        ul.sub-menu {
+          display: none;
+        }
+
+        li {
+          &.current-menu-item {
+            text-decoration: line-through;
+          }
+        }
+
+        ul, li {
+          transition: all .3s ease-in-out;
+        }
+
+        a {
+          width: 100vw;
+          height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-transform: uppercase;
+          transition: color .3s ease-in-out;
+          font-size: $pt-l;
+
+          @media (min-width: 768px) {
+            font-size: $pt-xl;
+          }
+        }
+
+        ul, li {
+          &:not( .current-menu-item ) {
+            &:hover {
+              background-color: $white-darker;
+              a {
+                color: $bg-color;
+              }
+            }
+          }
+        }
+      }
+
+      .menu-toggle {
+        background: url(../../assets/images/menu-exit.svg) no-repeat center;
+        &:after {
+          content: 'CLOSE';
+          margin-left: 85px;
+        }
+      }
+    }
+  }
+}
