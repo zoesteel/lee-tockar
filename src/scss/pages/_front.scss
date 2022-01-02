@@ -2,10 +2,11 @@
 	.slide-content {
 		p {
 			font-weight: 700;
-			letter-spacing: 2px;
+			letter-spacing: 0.3em;
 			font-size: 36px;
 			font-family: $heading-font;
 			color: $white-darker;
+			margin-bottom: $pt-xl;
 
 			@media (min-width: 768px) {
 				font-size: $pt-xl;
@@ -14,20 +15,24 @@
 	}
 }
 
-.front-page__post-grid {
+.uagb-post-grid.front-page__post-grid {
 	.uagb-post {
 		&__inner-wrap {
 			background: transparent;
 		}
 
 		&__image {
+			overflow: hidden;
+
 			img {
 				height: 225px;
-				transition: opacity 0.3s;
+				transition: all $transition-time;
 				overflow: hidden;
 				object-fit: cover;
+
 				&:hover {
 					opacity: .3;
+					transform: scale(1.1);
 				}
 			}
 		}

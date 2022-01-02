@@ -1,0 +1,15 @@
+h4.card-title {
+  text-align: center;
+
+  a {
+    font-weight: $font-weight-medium-bold;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}
+
+.card-header {
+  margin-top: $pt-xm;
+}

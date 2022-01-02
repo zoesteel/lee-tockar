@@ -77,6 +77,18 @@ if ( ! function_exists( 'lee_site_setup' ) ) :
 			)
 		);
 
+		/**
+		 * Add support for two menus
+		 */
+		function lee_theme_menus() {
+			register_nav_menus(
+				array(
+					'footer-menu' => __( 'Footer Menu' ),
+				)
+			);
+		}
+		add_action( 'init', 'lee_theme_menus' );
+
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background',
@@ -88,6 +100,11 @@ if ( ! function_exists( 'lee_site_setup' ) ) :
 				)
 			)
 		);
+
+		/**
+		 * Add support for custom units (em, rem, vh, vw)
+		 */
+		add_theme_support( 'custom-units' );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -165,7 +182,7 @@ function lee_site_scripts() {
 	// Theme styles.
 	wp_enqueue_style( 'lee-theme-style', get_theme_file_uri( 'assets/css/style.css' ), array(), _S_VERSION );
 
-	wp_enqueue_style( 'lee-theme-google-fonts', 'https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Lato:wght@400;700&family=Open+Sans&display=swap', array(), _S_VERSION, false );
+	wp_enqueue_style( 'lee-theme-google-fonts', 'https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Lato:wght@400;700;900&family=Open+Sans:wght@400;500;700&display=swap', array(), _S_VERSION, false );
 
 	wp_enqueue_script( 'lee-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), _S_VERSION, true );
 

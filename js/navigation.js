@@ -5,7 +5,7 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
-( function( $ ) {
+( function( ) {
 	const siteNavigation = document.getElementById( 'site-navigation' );
 
 	// Return early if the navigation don't exist.
@@ -38,9 +38,11 @@
 		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
 			button.setAttribute( 'aria-expanded', 'false' );
 			document.body.classList.add( 'menu-toggled' );
+			button.innerText = 'CLOSE';
 		} else {
 			button.setAttribute( 'aria-expanded', 'true' );
 			document.body.classList.remove( 'menu-toggled' );
+			button.innerText = 'MENU';
 		}
 	} );
 
@@ -99,16 +101,14 @@
 		}
 	}
 
-	button.innerText = '';
+// 	const positionToMakeNavSticky = $( '#masthead' ).offset().top; //get the Y-position of section
 
-	const positionToMakeNavSticky = $( '#masthead' ).offset().top; //get the Y-position of section
-
-	$( window ).on( 'scroll', function() {// fires when user scrolls
-		const currentPosition = window.pageYOffset; // get the current window Y-Position
-		if ( currentPosition > positionToMakeNavSticky ) {
-			$( '#masthead' ).addClass( 'sticky' ); // add class to make the nav sticky using css
-		} else {
-			$( '#masthead' ).removeClass( 'sticky' ); // remove sticky css class
-		}
-	} );
-}( jQuery ) );
+// 	$( window ).on( 'scroll', function() {// fires when user scrolls
+// 		const currentPosition = window.pageYOffset; // get the current window Y-Position
+// 		if ( currentPosition > positionToMakeNavSticky ) {
+// 			$( '#masthead' ).addClass( 'sticky' ); // add class to make the nav sticky using css
+// 		} else {
+// 			$( '#masthead' ).removeClass( 'sticky' ); // remove sticky css class
+// 		}
+// 	} );
+}( ) );

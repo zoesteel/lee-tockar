@@ -1,5 +1,13 @@
-.front__page-post-grid {
+.uagb-post-grid {
   .uagb-post__items article .uagb-post__inner-wrap {
     height: 400px;
+  }
+
+  .uagb-post__title {
+    a {
+      font-weight: $font-weight-medium-bold;
+      letter-spacing: 0.1em;
+      font-size: 14px;
+    }
   }
 }

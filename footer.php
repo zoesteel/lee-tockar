@@ -21,7 +21,7 @@
 			<h2><?php echo esc_html( $footer_title ); ?></h2>
 		</div>
 		<div>
-			<h4>Menu</h4>
+			<h4><?php _e( 'Menu', 'lee-theme' ); ?></h4>
 			<?php
 				wp_nav_menu(
 					array(
@@ -33,7 +33,7 @@
 
 		<?php	if ( get_theme_mod( 'contact_mail' ) ) { ?>
 				<div>
-					<h4>Contact</h4>
+					<h4><?php _e( 'Contact', 'lee-theme' ); ?></h4>
 					<p><?php echo esc_html( get_theme_mod( 'contact_mail' ) ); ?></p>
 				</div>
 		<?php	} ?>

@@ -1,16 +1,30 @@
 
 .site-header {
-  // position: relative;
-  // top: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 99;
-  // height: 0;
   background: $bg-color;
-  width: $site__width;
-  max-width: $content__width;
-  margin: 0 auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  border-bottom: 1px $grey-darker;
+
+  .admin-bar & {
+    top: 32px;
+  }
+
+  .site-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: $site__width;
+    max-width: $content__width;
+    margin: 0 auto;
+    padding-top: $pt-xxs;
+    padding-bottom: $pt-xxs;
+  }
 }
 
 .site-branding {
@@ -20,12 +34,18 @@
 
   .site-title {
     margin: 0;
+
+    &:first-letter {
+      // font-size: $pt-l;
+    }
+
     a {
       text-decoration: none;
       font-size: 20px;
-      font-size: $pt-l;
       font-weight: 700;
-		  font-family: $logo-font;
+      text-transform: uppercase;
+      font-family: $logo-font;
+
       filter: drop-shadow(2px 4px 6px $bg-darker);
       transition: color .2s ease-in-out;
 
@@ -33,5 +53,13 @@
         color: rgb(192, 192, 192);
       }
     }
+  }
+
+  .site-description {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: $font-weight-medium-bold;
+    margin-bottom: 0;
+    letter-spacing: .1em;
   }
 }

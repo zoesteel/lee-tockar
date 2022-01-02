@@ -3,7 +3,8 @@ $bg-darker:	#080808;
 
 $black: #000;
 $white: #fff;
-$white-darker: #f5f5f5;
+// $white-darker: #f5f5f5;
+$white-darker: #c2c2c2;
 $grey: #505050;
 $grey-darker: #282828;
 $grey-lighter: #999999;
@@ -20,7 +21,7 @@ $pt-l: 2rem;
 $pt-xl: 4rem;
 $pt-xxl: 8rem;
 
-$site__width: calc(100% - $pt-l);
+$site__width: calc(100% - 48px);
 $content__width: 1200px;
 $content__width-mobile: 600px;
 $content__width-page: 600px;
@@ -33,10 +34,13 @@ $body-color: $white-darker;
 $body-line-height: 1.5;
 
 $logo-font: 'Grechen Fuemen', cursive;
-$heading-font: 'Lato', 'Arial', sans-serif;
+$heading-font: 'Lato', sans-serif;
 $heading-font-size: $pt-m;
 $heading-font-weight: 700;
 $heading-line-height: 1.5;
 
 $font-weight-medium: 500;
-$font-weight-bold: 600;
+$font-weight-medium-bold: 600;
+$font-weight-bold: 700;
+
+$transition-time: .3s;

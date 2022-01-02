@@ -2,10 +2,16 @@
   max-width: $site__width;
   width: $content__width;
   margin: 0 auto $pt-xl;
-  
-  
+
   .nav-links {
     display: flex;
     justify-content: space-between;
   }
+}
+
+.entry-footer {
+  margin: 0 auto $pt-xm auto;
+  margin-right: auto;
+  max-width: $site__width;
+  width: $content__width;
 }

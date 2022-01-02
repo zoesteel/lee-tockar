@@ -3,36 +3,34 @@
 }
 
 .site-header {
-  background: $bg-color;
-
   nav {
     #primary-menu {
       display: none;
     }
 
-    li::marker{
-      content: '';
-    }
-
     a {
-      color: $white-darker;
+      color: $white;
       text-decoration: none;
       list-style-type: none;
     }
 
     .menu-toggle {
-      background: url(../../assets/images/menu.svg) no-repeat center;
-      filter: drop-shadow(2px 4px 6px $bg-darker);
+      background: url(../../assets/images/menu.svg) no-repeat right center;
       border: none;
       z-index: 99;
-      transition: background .4s ease-in-out;
-      padding: 0;
-      font-weight: 600;
+      font-weight: $font-weight-bold;
+      font-size: 15px;
+      color: $white;
+      width: 110px;
+      height: 32px;
+      -webkit-transition: transform $transition-time;
+      -moz-transition: transform $transition-time;
+      -o-transition: transform $transition-time;
+      transition: transform $transition-time;
+      letter-spacing: .1em;
 
-      &:after {
-        content: 'MENU';
-        margin-left: 80px;
-        font-size: $pt-m;
+      &:hover {
+        transform: scale(1.05);
       }
     }
   }
@@ -42,6 +40,7 @@
 .menu {
   ul {
     padding-left: 0;
+
     li {
       list-style-type: none;
       margin-bottom: $pt-xxs;
@@ -54,65 +53,59 @@
 
   .menu-toggled & {
     height: unset;
-    align-items: flex-start;
-
-    .site-branding {
-      // position: absolute;
-      // top: 8px;
-    }
-
-    .menu-toggle {
-      // right: 1rem; 
-      /* width: unset; */
-      // position: absolute;
-      margin-top: 0.75rem;
-    }
 
     nav {
-      // width: $content__width;
-      // display: flex;
-      // justify-content: center;
-      // flex-direction: column;
-      // overflow: hidden;
-      height: 100vh;
+      // height: 100vh;
+      z-index: 99;
 
       .menu-header-menu-container {
-        height: 100vh;
-        display: flex;
-        align-items: center;
+        width: 100vw;
+        height: 95vh;
+        background: $bg-color;
         position: absolute;
         left: 0;
+        top: 5vh;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
       }
 
       #primary-menu {
         display: flex;
         flex-direction: column;
         padding-left: 0;
-        // margin-top: -60px;
+        flex: 0 0 100%;
 
         ul.sub-menu {
           display: none;
         }
 
         li {
-          &.current-menu-item {
-            text-decoration: line-through;
-          }
-        }
-
-        ul, li {
-          transition: all .3s ease-in-out;
-        }
-
-        a {
           width: 100vw;
           height: 100px;
           display: flex;
           justify-content: center;
           align-items: center;
+
+          &.current-menu-item:not( .menu-item-has-children ) {
+            text-decoration: line-through;
+
+            a {
+              cursor: default;
+            }
+          }
+        }
+
+        ul, li {
+          transition: all $transition-time ease-in-out;
+        }
+
+        a {
           text-transform: uppercase;
-          transition: color .3s ease-in-out;
+          transition: color $transition-time ease-in-out;
           font-size: $pt-l;
+          font-weight: 900;
+          font-family: $heading-font;
 
           @media (min-width: 768px) {
             font-size: $pt-xl;
@@ -121,10 +114,40 @@
 
         ul, li {
           &:not( .current-menu-item ) {
+
             &:hover {
-              background-color: $white-darker;
+              background-color: $white;
+
               a {
                 color: $bg-color;
+              }
+            }
+          }
+        }
+
+        li.menu-item-has-children:hover {
+          a {
+            font-size: 0;
+          }
+          
+          li {
+            height: 0;
+          }
+
+          ul.sub-menu {
+            display: inline-flex;
+            justify-content: space-evenly;
+
+            li {
+              width: unset;
+              margin: 0 $pt-xm;
+            }
+
+            a {
+              font-size: 20px;
+
+              &:not( .current-menu-item ):hover {
+                text-decoration: underline;
               }
             }
           }
@@ -132,10 +155,14 @@
       }
 
       .menu-toggle {
-        background: url(../../assets/images/menu-exit.svg) no-repeat center;
-        &:after {
-          content: 'CLOSE';
-          margin-left: 85px;
+        background: url(../../assets/images/menu-exit.svg) no-repeat right center;
+        -webkit-transition: transform $transition-time;
+        -moz-transition: transform $transition-time;
+        -o-transition: transform $transition-time;
+        transition: transform $transition-time;
+
+        &:hover {
+          transform: scale(.95);
         }
       }
     }

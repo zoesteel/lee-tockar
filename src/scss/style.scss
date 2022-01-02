@@ -6,17 +6,20 @@
 @import 'base/typography';
 
 @import 'mixins/buttons';
+@import 'mixins/fadein';
 
 @import 'areas/menu';
 @import 'areas/header';
 @import 'areas/footer';
 @import 'areas/post-grid';
 @import 'areas/cover';
+@import 'areas/comments';
 
 @import 'elements/links';
 @import 'elements/button';
 @import 'elements/image';
 @import 'elements/form';
+@import 'elements/card';
 
 @import 'pages/archive';
 @import 'pages/front';
