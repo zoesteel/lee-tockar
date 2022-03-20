@@ -31,15 +31,20 @@
 				?>
 			</div>
 
-		<?php	if ( get_theme_mod( 'contact_mail' ) ) { ?>
-				<div>
+		<?php //	if ( get_theme_mod( 'contact_mail' ) ) { ?>
+				<!-- <div>
 					<h4><?php _e( 'Contact', 'lee-theme' ); ?></h4>
 					<p><?php echo esc_html( get_theme_mod( 'contact_mail' ) ); ?></p>
-				</div>
-		<?php	} ?>
+				</div> -->
+		<?php //	} ?>
 
 		<div>
 			<h4>Social</h4>
+			<?php if ( is_active_sidebar( 'footer-widget' ) ) : ?>
+				<div id="secondary" class="footer-widget" role="complementary">
+				<?php dynamic_sidebar( "footer-widget" ); ?>
+				</div>
+			<?php endif; ?>
 		</div>
 
 	</div><!-- .site-info -->

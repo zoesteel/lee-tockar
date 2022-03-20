@@ -182,7 +182,7 @@ function lee_site_scripts() {
 	// Theme styles.
 	wp_enqueue_style( 'lee-theme-style', get_theme_file_uri( 'assets/css/style.css' ), array(), _S_VERSION );
 
-	wp_enqueue_style( 'lee-theme-google-fonts', 'https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Lato:wght@400;700;900&family=Open+Sans:wght@400;500;700&display=swap', array(), _S_VERSION, false );
+	wp_enqueue_style( 'lee-theme-google-fonts', 'https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Lato:wght@400;700;900&family=Open+Sans:wght@400;500;700&display=swap', array(), null );
 
 	wp_enqueue_script( 'lee-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), _S_VERSION, true );
 
@@ -215,8 +215,8 @@ add_action( 'enqueue_block_editor_assets', 'lee_site_editor_styles' );
 function lee_theme_project_post_type() {
 	// Set UI labels for Custom Post Type.
 	$labels = array(
-		'name'               => _x( 'Paintings', 'Post Type General Name', 'lee-theme' ),
-		'singular_name'      => _x( 'Painting', 'Post Type Singular Name', 'lee-theme' ),
+		'name'               => _x( 'paintings', 'Post Type General Name', 'lee-theme' ),
+		'singular_name'      => _x( 'painting', 'Post Type Singular Name', 'lee-theme' ),
 		'menu_name'          => __( 'Paintings', 'lee-theme' ),
 		'parent_item_colon'  => __( 'Parent painting', 'lee-theme' ),
 		'all_items'          => __( 'All paintings', 'lee-theme' ),
@@ -271,6 +271,20 @@ function lee_theme_project_post_type() {
 	* unnecessarily executed.
 	*/
 add_action( 'init', 'lee_theme_project_post_type', 0 );
+
+function lee_theme_widgets_init() {
+	register_sidebar(
+		array(
+			'name' => __( 'Footer', 'lee-theme' ),
+			'id' => 'footer-widget',
+			'before_widget' => '<div id="%1$s" class="footer-widget" %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="footer-widget">',
+			'after_title' => '</h3>',
+		)
+	);
+}
+add_action( 'widgets_init', 'lee_theme_widgets_init' );
 
 /**
  * These 2 filters and 1 function move the built in WordPress admin pages to

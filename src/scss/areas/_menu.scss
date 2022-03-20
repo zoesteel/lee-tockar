@@ -60,11 +60,11 @@
 
       .menu-header-menu-container {
         width: 100vw;
-        height: 95vh;
+        height: 100vh;
         background: $bg-color;
         position: absolute;
         left: 0;
-        top: 5vh;
+        top: 6vh;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -113,14 +113,11 @@
         }
 
         ul, li {
-          &:not( .current-menu-item ) {
+          &:hover {
+            background-color: $white;
 
-            &:hover {
-              background-color: $white;
-
-              a {
-                color: $bg-color;
-              }
+            a {
+              color: $bg-color;
             }
           }
         }
@@ -145,6 +142,10 @@
 
             a {
               font-size: 20px;
+
+              &:hover {
+                // color: 
+              }
 
               &:not( .current-menu-item ):hover {
                 text-decoration: underline;

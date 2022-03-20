@@ -1,8 +1,8 @@
 .front-page__slider {
 	.slide-content {
-		p {
-			font-weight: 700;
-			letter-spacing: 0.3em;
+		h1 {
+			font-weight: $font-weight-bold;
+			letter-spacing: 0.1em;
 			font-size: 36px;
 			font-family: $heading-font;
 			color: $white-darker;

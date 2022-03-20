@@ -9,12 +9,6 @@ body {
 	animation: fadein 3s;
 }
 
-article {
-	.entry-content {
-		margin: 0 auto $pt-xl auto;
-	}
-}
-
 .page-content, .page-header {
 	margin: $pt-xl auto;
 	> * {
@@ -24,10 +18,14 @@ article {
 		width: $content__width;
 	}
 }
+	
+.front-page article .entry-content {
+	margin: 0 auto $pt-xl auto;
+}
 
-article.page,
-article.post {
+article {
 	.entry-content {
+		margin: $pt-xl auto;
 
 		> * {
 			margin-left: auto;
@@ -37,6 +35,10 @@ article.post {
 		> *:not( .alignfull ):not( .alignwide ) {
 			max-width: $site__width;
 			width: $content__width;
+
+			@media (max-width: 768px) {
+				width: $content__width-mobile;
+			}
 		}
 
 		> .alignwide {

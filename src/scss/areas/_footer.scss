@@ -35,6 +35,7 @@ footer.site-footer {
 
     h2 {
       text-transform: uppercase;
+      font-weight: $font-weight-xbold;
 
       @media (min-width: 768px) {
         max-width: 50%;
@@ -44,6 +45,29 @@ footer.site-footer {
     h4 {
       text-transform: uppercase;
       font-size: 18px;
+    }
+  }
+
+  .wp-block-social-links {
+    font-size: $pt-m;
+    .wp-block-social-link {
+      transition: transform $transition-time;
+      height: fit-content;
+      margin-top: 0;
+
+      svg {
+        width: $pt-l;
+        height: $pt-l;
+        transform-origin: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.1499999999999999rem;
+      }
+
+      a {
+        display: contents;
+      }
     }
   }
 

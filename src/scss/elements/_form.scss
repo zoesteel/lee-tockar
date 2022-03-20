@@ -4,6 +4,13 @@ form {
   flex-direction: column;
   width: 100%;
 
+  &.comment-form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+
   input, textarea {
     background-color: $bg-darker;
     color: $white-darker;

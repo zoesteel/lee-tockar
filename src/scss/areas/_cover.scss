@@ -8,7 +8,11 @@
   background-attachment: fixed;
 
   .single & {
-    height: 85vh;
+    height: 100vh;
+    background-position: top center;
+    // filter: grayscale(100%);
+    background-size: contain;
+    background-attachment: initial;
   }
 }
 
@@ -28,17 +32,20 @@
   }
 }
 
-h1 {
+.entry-title, h1 {
   margin: $pt-m;
   background-color: $black;
   opacity: .7;
-  font-weight: 700;
-  // letter-spacing: 0.3rem;
+  font-weight: $font-weight-bold;
   font-size: 36px;
   text-transform: uppercase;
   text-align: center;
   padding: $pt-xxs $pt-l;
-  // filter: grayscale(100%);
+  letter-spacing: .1em;
+
+  .single & {
+    align-self: end;
+  }
 
   @media (min-width: 768px) {
     font-size: $pt-xl;
